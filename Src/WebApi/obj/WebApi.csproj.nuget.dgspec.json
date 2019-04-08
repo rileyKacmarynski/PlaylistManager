@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\WebApi\\WebApi.csproj": {}
+    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\WebApi\\WebApi.csproj": {
+    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\WebApi\\WebApi.csproj",
+        "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\WebApi\\WebApi.csproj",
         "packagesPath": "C:\\Users\\rkacmarynski\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\WebApi\\obj\\",
+        "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

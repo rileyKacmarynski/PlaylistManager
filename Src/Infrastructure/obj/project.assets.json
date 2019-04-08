@@ -184,11 +184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\rkacmarynski\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

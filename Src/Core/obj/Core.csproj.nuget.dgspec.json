@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Core\\Core.csproj": {}
+    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Core\\Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Core\\Core.csproj": {
+    "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\rkacmarynski\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Core\\obj\\",
+        "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

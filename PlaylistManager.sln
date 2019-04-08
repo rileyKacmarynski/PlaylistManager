@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csproj", "{E7A2CB21-7F91-49F6-B9DE-1FDA36E01C51}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Src\Domain\Domain.csproj", "{E7A2CB21-7F91-49F6-B9DE-1FDA36E01C51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{7835028C-4DAF-4854-83E2-DE56D140F518}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Src\Core\Core.csproj", "{7835028C-4DAF-4854-83E2-DE56D140F518}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{FB426A27-7B21-400B-A442-920789EC5503}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Src\Infrastructure\Infrastructure.csproj", "{FB426A27-7B21-400B-A442-920789EC5503}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{9D968E0A-F2DC-4DF9-A19C-463575778F61}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "Src\WebApi\WebApi.csproj", "{9D968E0A-F2DC-4DF9-A19C-463575778F61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyImporter", "SpotifyImporter\SpotifyImporter.csproj", "{39A96E25-4202-416C-B546-0C35E6AB6258}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpotifyImporter", "Src\SpotifyImporter\SpotifyImporter.csproj", "{39A96E25-4202-416C-B546-0C35E6AB6258}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,13 @@
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\SpotifyImporter.deps.json
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\SpotifyImporter.runtimeconfig.json
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\SpotifyImporter.runtimeconfig.dev.json
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\SpotifyImporter.dll
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.dll
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.xml
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\obj\Debug\netcoreapp2.2\SpotifyImporter.csprojAssemblyReference.cache
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\obj\Debug\netcoreapp2.2\SpotifyImporter.csproj.CoreCompileInputs.cache
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\obj\Debug\netcoreapp2.2\SpotifyImporter.AssemblyInfoInputs.cache
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\obj\Debug\netcoreapp2.2\SpotifyImporter.AssemblyInfo.cs
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\obj\Debug\netcoreapp2.2\SpotifyImporter.csproj.CopyComplete
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\rkacmarynski\Repos\Learning\PlaylistManager\Src\SpotifyImporter\bin\Debug\netcoreapp2.2\Microsoft.Extensions.DependencyInjection.xml

@@ -184,11 +184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Domain\\Domain.csproj",
+      "projectPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Domain\\Domain.csproj",
       "packagesPath": "C:\\Users\\rkacmarynski\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Domain\\obj\\",
+      "outputPath": "C:\\Users\\rkacmarynski\\Repos\\Learning\\PlaylistManager\\Src\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
