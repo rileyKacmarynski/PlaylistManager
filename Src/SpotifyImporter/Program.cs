@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Abstractions;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace SpotifyImporter
 {
@@ -11,7 +13,7 @@ namespace SpotifyImporter
     {
         public static IConfigurationRoot Configuration { get; set; }
 
-        static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -23,7 +25,7 @@ namespace SpotifyImporter
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, true)
-                .AddJsonFile($"appsettings{env}.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
 
             if (env == "Development")
@@ -33,24 +35,29 @@ namespace SpotifyImporter
             
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddOptions();
-            serviceCollection.Configure<AppSettings>(builder.Build().GetSection("AppSettings"));
+
+            var config = builder.Build();
+
+            serviceCollection.Configure<AppSettings>(config.GetSection("AppSettings"));
 
             ConfigureServices(serviceCollection);
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
-            serviceProvider.GetService<App>().Run();
+            await serviceProvider.GetService<App>().RunAsync();
         }
 
-        private static void ConfigureServices(IServiceCollection serviceCollection)
+        private static void ConfigureServices(IServiceCollection services)
         {
-            serviceCollection.AddLogging(configure =>
+            services.AddLogging(configure =>
             {
                 configure.AddConsole();
                 configure.AddDebug();
             });
 
-            serviceCollection.AddTransient<App>();
+            services.AddHttpClient();
+
+            services.AddTransient<App>();
         }
     }
 }
