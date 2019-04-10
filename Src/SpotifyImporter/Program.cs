@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Abstractions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SpotifyImporter.Auth;
+using SpotifyImporter.Services;
 
 namespace SpotifyImporter
 {
@@ -57,8 +57,8 @@ namespace SpotifyImporter
             });
 
             services.AddHttpClient();
-            services.AddTransient<IAuthService, AuthService>();
-            
+            services.AddTransient<IApiService, ApiService>();
+
             services.AddTransient<App>();
         }
     }

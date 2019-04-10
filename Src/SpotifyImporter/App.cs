@@ -1,51 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Net.Http;
+using System.Linq;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using SpotifyImporter.Auth;
+using SpotifyImporter.Services;
 using SpotifyImporter.SpotifyResponses;
+using SpotifyImporter.Urls;
 
 namespace SpotifyImporter
 {
     public class App
     {
-        private readonly IHttpClientFactory _clientFactory;
-        private readonly AppSettings _appSettings;
-        private readonly IAuthService _authService;
+        private readonly IApiService _apiService;
 
-        public App(IOptions<AppSettings> appSettings, IHttpClientFactory clientFactory, IAuthService authService)
+        public App(IApiService apiService)
         {
-            _clientFactory = clientFactory;
-            _authService = authService;
-            _appSettings = appSettings.Value;
+            _apiService = apiService;
         }
 
         public async Task RunAsync()
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/users/{_appSettings.Username}/playlists?limit=50");
+            var playlists = await _apiService.GetPlaylistsAsync();
 
-            //var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/playlists/0cLVgAgfXeE9FFpUOsORqE/tracks");
-
-            var authToken = await _authService.GetAuthTokenAsync();
-            request.Headers.Add("Authorization", authToken);
-
-            var client = _clientFactory.CreateClient();
-            var response = await client.SendAsync(request);
-
-            UserPlaylistsResponse playlistResponse;
-            if (response.IsSuccessStatusCode)
-            {
-                var json = await response.Content.ReadAsStringAsync();
-                playlistResponse = JsonConvert.DeserializeObject<UserPlaylistsResponse>(json);
-                //playlistResponse = JsonConvert.DeserializeObject<PlaylistTracksResponse>(json);
-
-            }
+            var tracks = await _apiService.GetPlaylistTracksAsync(playlists.Playlists.Select(p => p.Id));
         }
+
     }
 }
