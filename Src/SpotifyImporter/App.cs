@@ -9,6 +9,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using SpotifyImporter.Auth;
+using SpotifyImporter.SpotifyResponses;
 
 namespace SpotifyImporter
 {
@@ -27,18 +28,23 @@ namespace SpotifyImporter
 
         public async Task RunAsync()
         {
-            var request2 = new HttpRequestMessage(HttpMethod.Get, "https://api.spotify.com/v1/users/flexx98/playlists");
+            var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/users/{_appSettings.Username}/playlists?limit=50");
+
+            //var request = new HttpRequestMessage(HttpMethod.Get, $"https://api.spotify.com/v1/playlists/0cLVgAgfXeE9FFpUOsORqE/tracks");
 
             var authToken = await _authService.GetAuthTokenAsync();
-            request2.Headers.Add("Authorization", authToken);
+            request.Headers.Add("Authorization", authToken);
 
-            var client2 = _clientFactory.CreateClient();
-            var response2 = await client2.SendAsync(request2);
+            var client = _clientFactory.CreateClient();
+            var response = await client.SendAsync(request);
 
-            string thing;
-            if (response2.IsSuccessStatusCode)
+            UserPlaylistsResponse playlistResponse;
+            if (response.IsSuccessStatusCode)
             {
-                thing = await response2.Content.ReadAsStringAsync();
+                var json = await response.Content.ReadAsStringAsync();
+                playlistResponse = JsonConvert.DeserializeObject<UserPlaylistsResponse>(json);
+                //playlistResponse = JsonConvert.DeserializeObject<PlaylistTracksResponse>(json);
+
             }
         }
     }
