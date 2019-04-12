@@ -38,7 +38,7 @@ namespace SpotifyImporter.Services
 
         private async Task<(string playlistId, PlaylistTracksResponse tracks)> GetTracksAsync(string id)
         {
-            var tracks = await GetApiDataAsync<PlaylistTracksResponse>(UrlConfig.GetUserPlaylists(_appSettings.Username));
+            var tracks = await GetApiDataAsync<PlaylistTracksResponse>(UrlConfig.GetPlaylistTracks(id));
             return (id, tracks);
         }
 
@@ -75,7 +75,7 @@ namespace SpotifyImporter.Services
             var response = await client.SendAsync(request);
 
             if (!response.IsSuccessStatusCode)
-                throw new Exception("Unable to Authenticate with Spotify servers.");
+                throw new Exception("Unable to Authenticate with SpotifyId servers.");
 
             var json = await response.Content.ReadAsStringAsync();
             var token = JsonConvert.DeserializeObject<AuthResponse>(json);
