@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Domain;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure
 {

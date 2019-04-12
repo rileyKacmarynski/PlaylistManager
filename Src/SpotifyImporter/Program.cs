@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Abstractions;
@@ -12,6 +14,7 @@ namespace SpotifyImporter
 {
     class Program
     {
+        private static IConfigurationRoot _config;
         public static IConfigurationRoot Configuration { get; set; }
 
         public static async Task Main(string[] args)
@@ -25,7 +28,7 @@ namespace SpotifyImporter
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, true)
+                .AddJsonFile("appsettings.json", optional: false, true)
                 .AddJsonFile($"appsettings.{env}.json", optional: true, reloadOnChange: true)
                 .AddEnvironmentVariables();
 
@@ -37,9 +40,9 @@ namespace SpotifyImporter
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddOptions();
 
-            var config = builder.Build();
+            _config = builder.Build();
 
-            serviceCollection.Configure<AppSettings>(config.GetSection("AppSettings"));
+            serviceCollection.Configure<AppSettings>(_config.GetSection("AppSettings"));
 
             ConfigureServices(serviceCollection);
 
@@ -55,6 +58,10 @@ namespace SpotifyImporter
                 configure.AddConsole();
                 configure.AddDebug();
             });
+            
+            services.AddDbContext<PlaylistManagerDbContext>(options =>
+                options.UseSqlServer(_config.GetConnectionString("DefaultConnection"),
+                    x => x.MigrationsAssembly("Infrastructure")));
 
             services.AddHttpClient();
             services.AddTransient<IApiService, ApiService>();
