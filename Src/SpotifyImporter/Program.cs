@@ -60,8 +60,7 @@ namespace SpotifyImporter
             });
             
             services.AddDbContext<PlaylistManagerDbContext>(options =>
-                options.UseSqlServer(_config.GetConnectionString("DefaultConnection"),
-                    x => x.MigrationsAssembly("Infrastructure")));
+                options.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
 
             services.AddHttpClient();
             services.AddTransient<IApiService, ApiService>();
