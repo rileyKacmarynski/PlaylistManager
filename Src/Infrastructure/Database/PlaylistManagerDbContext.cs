@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Core.Interfaces;
 using Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Infrastructure
+namespace Infrastructure.Database
 {
-    public class PlaylistManagerDbContext : DbContext
+    public class PlaylistManagerDbContext : DbContext, IPlaylistManagerDbContext
     {
         public PlaylistManagerDbContext(DbContextOptions<PlaylistManagerDbContext> options)
             :base(options)

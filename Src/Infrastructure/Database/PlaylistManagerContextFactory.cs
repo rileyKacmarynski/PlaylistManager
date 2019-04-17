@@ -1,7 +1,6 @@
-﻿using Infrastructure.Infrastructure;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure
+namespace Infrastructure.Database
 {
     // This idea is shamelessly stolen from https://github.com/JasonGT/NorthwindTraders/blob/master/Northwind.Persistence/NorthwindDbContextFactory.cs
     public class PlaylistManagerContextFactory : DesignTimeDbContextFactoryBase<PlaylistManagerDbContext>

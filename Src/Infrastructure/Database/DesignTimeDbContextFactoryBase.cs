@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
-namespace Infrastructure.Infrastructure
+namespace Infrastructure.Database
 {
     // Shamelessly stolen from here: https://github.com/JasonGT/NorthwindTraders/blob/master/Northwind.Persistence/Infrastructure/DesignTimeDbContextFactoryBase.cs
 
