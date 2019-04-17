@@ -9,15 +9,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Src\Core\Core.cspro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Src\Infrastructure\Infrastructure.csproj", "{FB426A27-7B21-400B-A442-920789EC5503}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "Src\WebApi\WebApi.csproj", "{9D968E0A-F2DC-4DF9-A19C-463575778F61}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpotifyImporter", "Src\SpotifyImporter\SpotifyImporter.csproj", "{39A96E25-4202-416C-B546-0C35E6AB6258}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9BEE677A-1C7B-450F-B9F3-0A6FB89F5A83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{23AEB69C-ED5C-4B6D-B8A9-ED09C5FC7F81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{23AEB69C-ED5C-4B6D-B8A9-ED09C5FC7F81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{84F8859E-14F6-4D39-8A49-93F233094D56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{84F8859E-14F6-4D39-8A49-93F233094D56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{29D21020-A804-47A0-9D32-2B82DD2F7977}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -113,6 +114,18 @@ Global
 		{84F8859E-14F6-4D39-8A49-93F233094D56}.Release|x64.Build.0 = Release|Any CPU
 		{84F8859E-14F6-4D39-8A49-93F233094D56}.Release|x86.ActiveCfg = Release|Any CPU
 		{84F8859E-14F6-4D39-8A49-93F233094D56}.Release|x86.Build.0 = Release|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Debug|x64.Build.0 = Debug|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Debug|x86.Build.0 = Debug|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Release|x64.ActiveCfg = Release|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Release|x64.Build.0 = Release|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Release|x86.ActiveCfg = Release|Any CPU
+		{29D21020-A804-47A0-9D32-2B82DD2F7977}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

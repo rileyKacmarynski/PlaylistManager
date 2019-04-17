@@ -17,7 +17,7 @@ namespace Infrastructure.Database
         public TContext CreateDbContext(string[] args)
         {
             var basePath = Directory.GetCurrentDirectory() +
-                           string.Format("{0}..{0}WebApi", Path.DirectorySeparatorChar);
+                           string.Format("{0}..{0}Api", Path.DirectorySeparatorChar);
             return Create(basePath, Environment.GetEnvironmentVariable(AspNetCoreEnvironment));
         }
 
