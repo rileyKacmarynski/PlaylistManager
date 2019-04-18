@@ -4,7 +4,11 @@ using System.Text;
 
 namespace Core.Exceptions
 {
-    class NotFoundException
+    public class NotFoundException : Exception
     {
+        public NotFoundException(string name, object key)
+            : base($"Entity {name}: {key} was not found.");
+        {
+        }
     }
 }
