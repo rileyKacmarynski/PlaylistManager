@@ -9,7 +9,9 @@ namespace Core.Playlists.CreatePlaylist
     {
         public CreatePlaylistCommandValidator()
         {
-            RuleFor(c => c.Name).Must(n => !string.IsNullOrWhiteSpace(n));
+            RuleFor(c => c.Name)
+                .Must(n => !string.IsNullOrWhiteSpace(n))
+                .MaximumLength(100);
             RuleFor(c => c.UserId).NotEmpty();
         }
     }

@@ -7,7 +7,9 @@ using NUnit.Framework;
 
 namespace UnitTests.Core.Playlist
 {
-    public class CreatePlaylistCommandValidatorTests
+    [TestFixture]
+    [Category(TestCategory.Playlist)]
+        public class CreatePlaylistCommandValidatorTests
     {
         private CreatePlaylistCommandValidator GetValidator()
         {
@@ -15,10 +17,45 @@ namespace UnitTests.Core.Playlist
         }
 
         [Test]
-        public void CreatePlaylistCommandValidator_NameIsInvalid_Fails()
+        [TestCase("")]
+        [TestCase("   ")]
+        [TestCase(null)]
+        public void NameValidation_IsEmpty_Fails(string value)
         {
             var validator = GetValidator();
-            validator.ShouldHaveValidationErrorFor(c => c.Name, "");
+            validator.ShouldHaveValidationErrorFor(c => c.Name, value);
+        }
+
+        [Test]
+        public void NameValidation_IsTooLong_Fails()
+        {
+            var validator = GetValidator();
+            validator.ShouldHaveValidationErrorFor(c => c.Name, "Name that is too longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
+        }
+
+        [Test]
+        [TestCase("Bob")]
+        [TestCase("A longer test name")]
+        public void NameValidation_NameIsValid_Fails(string value)
+        {
+            var validator = GetValidator();
+            validator.ShouldNotHaveValidationErrorFor(c => c.Name, value);
+        }
+
+        [Test]
+        [TestCase(0)]
+        [TestCase(null)]
+        public void UserIdValidation_IsEmpty_Fails(int value)
+        {
+            var validator = GetValidator();
+            validator.ShouldHaveValidationErrorFor(c => c.UserId, value);
+        }
+
+        [Test]
+        public void UserIdValidation_IsEmpty_Fails()
+        {
+            var validator = GetValidator();
+            validator.ShouldNotHaveValidationErrorFor(c => c.UserId, 1);
         }
     }
 }

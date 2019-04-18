@@ -22,9 +22,13 @@ namespace Core.Playlists.CreatePlaylist
                 _context = context;
             }
 
-            public Task<Unit> Handle(CreatePlaylistCommand request, CancellationToken cancellationToken)
+            public async Task<Unit> Handle(CreatePlaylistCommand request, CancellationToken cancellationToken)
             {
-                throw new NotImplementedException();
+                var user = await _context.Users.FindAsync(request.UserId);
+                if(user == null)
+                {
+                    throw
+                }
             }
         }
     }
