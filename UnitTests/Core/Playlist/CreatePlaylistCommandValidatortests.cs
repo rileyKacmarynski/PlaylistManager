@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Core.Playlists.CreatePlaylist;
+﻿using Core.Playlists.CreatePlaylist;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
 
 namespace UnitTests.Core.Playlist
 {
     [TestFixture]
-    [Category(TestCategory.Playlist)]
-        public class CreatePlaylistCommandValidatorTests
+    [Category(Category.Playlist)]
+    public class CreatePlaylistCommandValidatorTests
     {
         private CreatePlaylistCommandValidator GetValidator()
         {
