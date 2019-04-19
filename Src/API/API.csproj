@@ -7,10 +7,13 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="8.2.3" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.2.2" />
     <PackageReference Include="Mediatr" Version="6.0.0" />
     <PackageReference Include="Mediatr.Extensions.Microsoft.DependencyInjection" Version="6.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
   </ItemGroup>
 

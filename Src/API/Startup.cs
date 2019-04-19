@@ -1,15 +1,20 @@
-﻿using API.Common;
+﻿using System.Reflection;
+using API.Common;
 using API.Common.Filters.cs;
 using Core.Common;
 using Core.Interfaces;
+using Core.Playlists.CreatePlaylist;
 using Infrastructure;
+using Infrastructure.Database;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace API
@@ -33,9 +38,13 @@ namespace API
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddDbContext<PlaylistManagerDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IPlaylistManagerDbContext, PlaylistManagerDbContext>();
             services.AddTransient<IDateTime, MachineDateTime>();
 
-            //services.AddMediatR(typeof(CreatePlaylistCommand).GetTypeInfo().Assembly);
+            services.AddMediatR(typeof(CreatePlaylistCommand.Handler).GetTypeInfo().Assembly);
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
              
             services.AddCustomMvc();
