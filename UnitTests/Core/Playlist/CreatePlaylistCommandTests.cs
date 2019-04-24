@@ -20,17 +20,6 @@ namespace UnitTests.Core.Playlist
     [Category(Category.Playlist)]
     public class CreatePlaylistCommandTests
     {
-        // Since I'm checking against the in memory datastore is this technically an 
-        // integration test? Maybe... But it's easier than creating a fake context. 
-        private PlaylistManagerDbContext GetDbContext(string dbName)
-        {
-            var options = new DbContextOptionsBuilder<PlaylistManagerDbContext>()
-                .UseInMemoryDatabase(dbName)
-                .Options;
-
-            return new PlaylistManagerDbContext(options);
-        }
-
         private static CreatePlaylistCommand.Handler GetHandler(PlaylistManagerDbContext context)
         {
             return new CreatePlaylistCommand.Handler(context);
@@ -40,7 +29,7 @@ namespace UnitTests.Core.Playlist
         public async Task CreatePlaylist_PlaylistCreated_ReturnsSuccessfully()
         {
             const string dbName = "PlaylistCreateReturnsSuccessful";
-            using (var context = GetDbContext(dbName))
+            using (var context = Utils.GetDbContext(dbName))
             {
                 // arrange
                 const int userId = 1;
@@ -52,7 +41,7 @@ namespace UnitTests.Core.Playlist
                 await handler.Handle(command, CancellationToken.None);
             }
 
-            using (var context = GetDbContext(dbName))
+            using (var context = Utils.GetDbContext(dbName))
             {
                 var count = context.Playlists.Count();
                 Assert.AreEqual(1, count);
@@ -63,7 +52,7 @@ namespace UnitTests.Core.Playlist
         public void CreatePlaylist_InvalidUser_Throws()
         {
             const string dbName = "PlaylistCreateThrows";
-            using (var context = GetDbContext(dbName))
+            using (var context = Utils.GetDbContext(dbName))
             {
                 var command = new CreatePlaylistCommand {Name = "Test Playlist", UserId = 1};
 
