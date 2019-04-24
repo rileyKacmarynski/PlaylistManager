@@ -60,7 +60,7 @@ namespace UnitTests.Core.Playlist
         }
 
         [Test]
-        public async Task CreatePlaylist_InvalidUser_Throws()
+        public void CreatePlaylist_InvalidUser_Throws()
         {
             const string dbName = "PlaylistCreateThrows";
             using (var context = GetDbContext(dbName))

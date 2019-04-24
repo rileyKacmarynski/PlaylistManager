@@ -33,7 +33,7 @@ namespace UnitTests.Core.Playlist
         [Test]
         [TestCase("Bob")]
         [TestCase("A longer test name")]
-        public void NameValidation_NameIsValid_Fails(string value)
+        public void NameValidation_NameIsValid_Passes(string value)
         {
             var validator = GetValidator();
             validator.ShouldNotHaveValidationErrorFor(c => c.Name, value);
@@ -49,7 +49,7 @@ namespace UnitTests.Core.Playlist
         }
 
         [Test]
-        public void UserIdValidation_IsEmpty_Fails()
+        public void UserIdValidation_IsEmpty_Passes()
         {
             var validator = GetValidator();
             validator.ShouldNotHaveValidationErrorFor(c => c.UserId, 1);
