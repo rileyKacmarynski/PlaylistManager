@@ -10,11 +10,18 @@ namespace IntegrationTests.Helpers
     {
         public static void SeedDatabaseForTests(PlaylistManagerDbContext context)
         {
-            context.Users.Add(new User
+            var user1 = new User
             {
-                Id = 1,
                 DisplayName = "Test",
                 Email = "Test@domain.com"
+            };
+            context.Users.Add(user1);
+
+            context.Playlists.Add(new Playlist
+            {
+                Name = "Test Playlist 1",
+                TotalTracks = 0,
+                User = user1
             });
 
             context.SaveChanges();

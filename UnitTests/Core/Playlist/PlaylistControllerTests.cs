@@ -16,6 +16,9 @@ namespace UnitTests.Core.Playlist
     [Category(Category.Playlist)]
     public class PlaylistControllerTests
     {
+        // I'm only testing success cases here. 
+        // If the core layer throws an error it will be handled by the CustomExceptionFilter class
+        // We can test that class as an integration test
         [Test]
         public async Task CreatePlaylist_Succeeds_ReturnsSuccessResult()
         {
@@ -24,6 +27,18 @@ namespace UnitTests.Core.Playlist
 
             var controller = new PlaylistsController(fakeMediator);
             var json = (JsonResult)await controller.CreatePlaylist(dto, CancellationToken.None);
+            var res = (Result) json.Value;
+
+            Assert.IsTrue(res.Success);
+        }
+
+        [Test]
+        public async Task GetPlaylist_Succeeds_ReturnsSuccessResult()
+        {
+            var fakeMediator = A.Fake<IMediator>();
+
+            var controller = new PlaylistsController(fakeMediator);
+            var json = (JsonResult) await controller.GetPlaylists(1, string.Empty, CancellationToken.None);
             var res = (Result) json.Value;
 
             Assert.IsTrue(res.Success);

@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using API.Common;
 using API.Dtos;
 using Core.Playlists.CreatePlaylist;
+using Core.Playlists.GetPlaylists;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace API.Controllers
 {
@@ -30,6 +32,16 @@ namespace API.Controllers
             await _mediator.Send(command, token);
 
             return new JsonResult(Result.Ok());
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetPlaylists([FromQuery] int? userId, [FromQuery] string name,
+            CancellationToken token)
+        {
+            var query = new GetPlaylistsQuery {UserId = userId, Name = name};
+            var playlists = await _mediator.Send(query, token);
+
+            return new JsonResult(Result.Ok(playlists));
         }
     }
 }

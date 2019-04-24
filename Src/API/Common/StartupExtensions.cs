@@ -7,6 +7,8 @@ using Core.Playlists.CreatePlaylist;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using FluentValidation.AspNetCore;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace API.Common
 {
@@ -17,6 +19,10 @@ namespace API.Common
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(CustomExceptionFilterAttribute));
+            })
+            .AddJsonOptions(options => {
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             })
             .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreatePlaylistCommandValidator>())
             .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

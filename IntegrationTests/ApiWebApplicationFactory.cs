@@ -29,7 +29,7 @@ namespace IntegrationTests
                 // database for testing.
                 services.AddDbContext<PlaylistManagerDbContext>(options =>
                 {
-                    options.UseInMemoryDatabase("InMemoryDbForTesting");
+                    options.UseInMemoryDatabase("InMemorySharedDb");
                     options.UseInternalServiceProvider(serviceProvider);
                 });
 
