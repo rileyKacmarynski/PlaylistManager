@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Core.Exceptions;
 using Core.Playlists.GetPlaylists;
 using Domain;
 using Infrastructure.Database;
 using NUnit.Framework;
 
-namespace UnitTests.Core.Playlist
+namespace UnitTests.Core.Playlists
 {
     [Category(Category.Playlist)]
     public class GetPlaylistsQueryTests

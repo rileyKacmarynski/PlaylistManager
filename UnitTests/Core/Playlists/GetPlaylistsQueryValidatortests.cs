@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Core.Playlists;
-using Core.Playlists.GetPlaylists;
+﻿using Core.Playlists.GetPlaylists;
 using FluentValidation.TestHelper;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
 
-namespace UnitTests.Core.Playlist
+namespace UnitTests.Core.Playlists
 {
     [Category(Category.Playlist)]
     public class GetPlaylistsQueryValidatorTests

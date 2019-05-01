@@ -2,7 +2,7 @@
 using FluentValidation.TestHelper;
 using NUnit.Framework;
 
-namespace UnitTests.Core.Playlist
+namespace UnitTests.Core.Playlists
 {
     [TestFixture]
     [Category(Category.Playlist)]

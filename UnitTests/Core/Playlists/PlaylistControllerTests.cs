@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using API.Common;
 using API.Controllers;
@@ -11,7 +8,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 
-namespace UnitTests.Core.Playlist
+namespace UnitTests.Core.Playlists
 {
     [Category(Category.Playlist)]
     public class PlaylistControllerTests
